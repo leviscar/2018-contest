@@ -2,6 +2,7 @@ function Game () {
     this.grid = [[0, 0, 0, 0],[0, 0, 0, 0],[0, 0, 0, 0],[0, 0, 0, 0]];
     this.score = 0;
     this.bestscore;
+    this.timeCnt =0;
     this.init();
 }
 
@@ -15,6 +16,7 @@ Game.prototype.init = function () {
         this.bestscore = 0;
     }
     this.printScore();
+    this.printTime();
     this.move();
 };
 
@@ -88,6 +90,18 @@ Game.prototype.printScore = function () {
     }
 };
 
+Game.prototype.formDate = function(num){
+    return num>9?num:"0"+num.toString();
+}
+Game.prototype.printTime = function () {
+    var time = document.getElementsByClassName("time")[0];
+    var cnt = this.timeCnt;
+    var formDate = this.formDate;
+    setInterval(function(){
+        time.innerHTML = formDate((cnt/3600).toFixed(0))+":"+formDate((cnt/60).toFixed(0))+":"+formDate(cnt%60);
+        cnt++;
+    },1000);
+}
 Game.prototype.addClasses = function () {
     var i,
         j,

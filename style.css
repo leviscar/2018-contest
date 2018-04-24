@@ -1,3 +1,12 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family:sans-serif;
     background-color: #FAF8EF;
@@ -12,7 +21,7 @@ h2 {
 }
 
 #scoreboard {
-    width: 70vw;
+    width: 105vw;
     margin: 0 auto;
 }
 
@@ -25,12 +34,13 @@ h2 {
 .score {
     float: left;
     width: 33vw;
-    height: 50px;
+    height: 32px;
     background-color: #EEE4DA;
     color: #776E65;
     text-align: center;
     border-radius: 5px;
 }
+
 
 .score:last-of-type {
     margin-left: 4vw;
@@ -46,7 +56,7 @@ width: 80vw;
 height: 80vw;
 background: #BBADA0;
     box-sizing: border-box;
-    margin: 20px auto;
+    margin: 40px auto;
     border-radius: 5px;
     position: relative;
 }
@@ -81,16 +91,16 @@ background: #BBADA0;
 
 /* Large devices (desktops, 62em and up) */
 @media (min-width: 56em) {
-    h1 {
-        padding: 50px;
+    h2 {
+        padding: 5px;
     }
 
     #scoreboard {
-        width: 320px;
+        width: 500px;
     }
 
     .score {
-        width: 150px;
+        width: 160px;
     }
 
     .score:last-of-type {
